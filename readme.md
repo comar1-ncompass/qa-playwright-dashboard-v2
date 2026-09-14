@@ -1,4 +1,4 @@
-# QA Dashboardv2 Playwright Automation — Quick Reference
+# QA Dashboardv2 Playwright Automation
 
 ## 1. How to Run
 
