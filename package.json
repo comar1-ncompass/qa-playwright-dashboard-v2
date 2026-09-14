@@ -1,0 +1,39 @@
+{
+  "name": "qa-playwright-tests-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests:chrome": "playwright test --config=playwright.config.ts --project=Chromium",
+    "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox --headed",
+    "tests:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
+    "tests:e2e": "playwright test --config=e2e.config.ts --project=Chromium --headed",
+    "tests:ui": "playwright test --ui",
+    "tests:debug": "playwright test --config=playwright.config.ts --project=Firefox --debug",
+    "tests:report": "playwright show-report",
+    "tests:codegen": "playwright codegen"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "@playwright/test": "^1.55.1",
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^24.5.2",
+    "@types/prettier": "^2.7.3",
+    "dotenv": "^17.2.3"
+  },
+  "dependencies": {
+    "prettier": "^3.6.2"
+  }
+}
