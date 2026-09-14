@@ -3,24 +3,20 @@
 ## 1. How to Run
 
 1. Install dependencies: `npm install`
-2. Copy `.env` and fill in the required values (see below), then run:
+2. Contact admin for copy of `.env` and fill in the required values (see below), then run:
 
-| Command               | What it does                                      |
-|-----------------------|----------------------------------------------------|
-| `npm run tests:chrome`  | Run all tests headless on Chromium                |
-| `npm run tests:firefox` | Run all tests headed on Firefox                   |
-| `npm run tests:webkit`  | Run all tests on Webkit                           |
-| `npm run tests:e2e`     | Run e2e tests headed via `e2e.config.ts`          |
-| `npm run tests:ui`      | Open Playwright's interactive UI mode             |
-| `npm run tests:debug`   | Debug tests step-by-step on Firefox               |
-| `npm run tests:report`  | Open the last HTML report                         |
-| `npm run tests:codegen` | Launch Playwright codegen to record new tests     |
+| Command                 | What it does                                  |
+| ----------------------- | --------------------------------------------- |
+| `npm run tests:chrome`  | Run all tests headless on Chromium            |
+| `npm run tests:firefox` | Run all tests headed on Firefox               |
+| `npm run tests:webkit`  | Run all tests on Webkit                       |
+| `npm run tests:e2e`     | Run e2e tests headed via `e2e.config.ts`      |
+| `npm run tests:ui`      | Open Playwright's interactive UI mode         |
+| `npm run tests:debug`   | Debug tests step-by-step on Firefox           |
+| `npm run tests:report`  | Open the last HTML report                     |
+| `npm run tests:codegen` | Launch Playwright codegen to record new tests |
 
-`ENV` in `.env` selects which base URL is used (`dev` / `stg` / `amplify`), resolved in `playwright.config.ts`.
-
-### npm run vs npx
-
-Both work — `npm run tests:chrome` just runs the `playwright test ...` command aliased in `package.json`. `npx playwright test` calls the Playwright CLI directly, which is handy for running a single spec file or passing one-off flags:
+`ENV` variable in `.env` selects which base URL is used (`dev` / `stg` / `amplify`), resolved in `playwright.config.ts`.
 
 ```
 npx playwright test tests/dashboard-login-email-otp.spec.ts
@@ -37,7 +33,8 @@ npx playwright test tests/dashboard-login-email-otp.spec.ts
 ## 3. Folder / File Reference
 
 - **fixtures/** — Playwright fixtures (custom `test` extensions)
-  - `autho.fixture.ts` — Auth0 + emailed OTP login flow fixture (provides the `dashboardPage` fixture)
+  - `auth.fixtures.ts` — authenticated session/browser context setup
+  - `oauth.fixture.ts` — OAuth-based login flow fixture
 - **helpers/** — reusable test logic, not fixtures
   - **common/** — shared utilities
     - `base-page.ts` — base Page Object class other pages extend
